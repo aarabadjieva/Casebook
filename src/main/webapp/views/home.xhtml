@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ul="http://xmlns.jcp.org/jsf/facelets">
+<ui:include src="_shared/head.xhtml"/>
+<h:body>
+<div class="container-fluid">
+    <ui:include src="_shared/user-nav.xhtml"/>
+    <main>
+        <hr class="my-2"/>
+        <div class="text-center mt-3">
+            <h:link outcome="profile?username=#{session.getAttribute('username')}" class="h4 text-info" value="Welcome, #{session.getAttribute('username')}"/>
+        </div>
+        <hr class="my-4"/>
+        <div class="container">
+            <div class="row mb-4 d-flex justify-content-around">
+                <ui:repeat value="#{homeBean.friends}" var="friend">
+                <div class="col-md-3 d-flex flex-column text-center mb-4">
+                    <h:graphicImage library="png" name="#{friend.gender}.png" class="img-thumbnail img-center" width="200" height="200"/>
+                    <h5 class="text-center">#{friend.username}</h5>
+                    <h:form styleClass="btn btn-info">
+                    <h:commandLink action="#{homeBean.addFriend(friend.username)}" class="btn-info" value="Add Friend"/>
+                    </h:form>
+                </div>
+                </ui:repeat>
+            </div>
+        </div>
+        <hr class="my-3"/>
+    </main>
+   <ui:include src="_shared/footer.xhtml"/>
+</div>
+</h:body>
+</html>

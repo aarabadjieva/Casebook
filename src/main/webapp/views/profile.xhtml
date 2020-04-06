@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ul="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="_shared/head.xhtml"/>
+<h:body>
+<div class="container-fluid">
+    <ui:include src="_shared/user-nav.xhtml"/>
+    <main>
+        <hr class="my-2"/>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 d-flex flex-column">
+                    <h:graphicImage library="png" name="#{profileBean.genderToLowerCase()}.png" class="mx-auto img-thumbnail" width="200" height="200"/>
+                    <h4 class="mx-auto mt-3">#{profileBean.user.username}</h4>
+                    <h5 class="mx-auto mt-3">#{profileBean.user.gender}</h5>
+                </div>
+            </div>
+        </div>
+        <hr class="my-3"/>
+    </main>
+    <ui:include src="_shared/footer.xhtml"/>
+</div>
+</h:body>
+</html>

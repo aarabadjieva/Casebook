@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ul="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="_shared/head.xhtml"/>
+<h:body>
+<div class="container-fluid">
+    <ui:include src="_shared/guest-nav.xhtml"/>
+    <main class="mt-3">
+        <hr class="my-2"/>
+        <h1 class="text-center">Register</h1>
+        <hr class="hr-2"/>
+        <h:form class="mx-auto w-15" method="post" action="login">
+            <div class="form-group">
+                <div class="label-holder d-flex justify-content-center">
+                    <h:outputLabel value="Username" class="h3 mb-2"/>
+                </div>
+                <h:inputText class="form-control" id="username" value="#{registerBean.user.username}"/>
+            </div>
+            <div class="form-group">
+                <div class="label-holder d-flex justify-content-center">
+                    <h:outputLabel value="Password" class="h3 mb-2"/>
+                </div>
+                <h:inputSecret class="form-control" id="password" value="#{registerBean.user.password}"/>
+            </div>
+            <div class="form-group">
+                <div class="label-holder d-flex justify-content-center">
+                    <h:outputLabel value="Confirm Password" class="h3 mb-2"/>
+                </div>
+                <h:inputSecret class="form-control" id="confirmPassword" value="#{registerBean.user.confirmPassword}"/>
+            </div>
+            <div class="form-group">
+                <div class="label-holder d-flex justify-content-center">
+                    <h:outputLabel value="Gender" class="h3 mb-2"/>
+                </div>
+                <h:selectOneMenu class="form-control" id="gender" value="#{registerBean.user.gender}">
+                    <f:selectItems value="#{enumBean.genders}"/>
+                </h:selectOneMenu>
+            </div>
+            <div class="button-holder d-flex justify-content-center">
+                <h:commandButton action="#{registerBean.register}" class="btn btn-info text-white" value="Register"/>
+            </div>
+        </h:form>
+        <hr class="my-3"/>
+    </main>
+   <ui:include src="_shared/footer.xhtml"/>
+</div>
+</h:body>
+</html>

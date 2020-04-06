@@ -1,0 +1,30 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+    <url-mapping>
+        <pattern value="/"/>
+        <view-id value="/faces/views/index.xhtml"/>
+    </url-mapping>
+    <url-mapping>
+        <pattern value="/register"/>
+        <view-id value="/faces/views/register.xhtml"/>
+    </url-mapping>
+    <url-mapping>
+        <pattern value="/login"/>
+        <view-id value="/faces/views/login.xhtml"/>
+    </url-mapping>
+    <url-mapping>
+        <pattern value="/home"/>
+        <view-id value="/faces/views/home.xhtml"/>
+    </url-mapping>
+    <url-mapping>
+        <pattern value="/profile"/>
+        <view-id value="/faces/views/profile.xhtml"/>
+    </url-mapping>
+    <url-mapping>
+        <pattern value="/friends"/>
+        <view-id value="/faces/views/friends.xhtml"/>
+    </url-mapping>
+</pretty-config>
